@@ -1,9 +1,24 @@
 import React, { Component } from 'react';
 
 export default class Player extends Component {
-    constructor(){
+    constructor() {
         super()
         this.videoRef = React.createRef()
+    }
+
+    getSnapshotBeforeUpdate(prevProps, prevState) {
+        return this.videoRef.currentTime
+    }
+    componentDidUpdate = (prevProps, prevState, snapshot) => {
+        if(this.props.index !== prevProps.index){
+            this.props.onSaveVideoProgress(snapshot, prevProps.index)
+            this.videoRef.currentTime = this.props.video.progress || 0
+            this.videoRef.play()
+        }
+    }
+
+    refHandler = (elm)=>{
+        this.videoRef = elm
     }
     render() {
         const video = this.props.video || {}
@@ -15,7 +30,8 @@ export default class Player extends Component {
                     className="video-player"
                     controls={true}
                     autoPlay={false}
-                    ref={(reference)=>{this.videoRef = reference}}
+                    ref={this.refHandler}
+                    id="video-player"
                 />
 
             ) : null

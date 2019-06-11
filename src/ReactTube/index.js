@@ -20,10 +20,22 @@ export default class ReactTube extends Component {
     //         selectedIndex: index
     //     })
     // }
-    onVideoClick(index){
+    onVideoClick(index) {
+        console.log(index)
         this.setState({
             selectedIndex: index
         })
+    }
+
+    saveVideoProgress = (seconds, index) => {
+        const videos = this.state.videos.map((video, videoIndex) => {
+            if (index === videoIndex) {
+                return { ...video, progress: seconds }
+            } else {
+                return video
+            }
+        })
+        this.setState({ videos: videos })
     }
     render() {
         const videos = this.state.videos || []
@@ -35,7 +47,11 @@ export default class ReactTube extends Component {
                 </header>
                 <div className="container">
                     <div className="container-left">
-                        <Player video={videos[selectedIndex]} />
+                        <Player
+                            video={videos[selectedIndex]}
+                            onSaveVideoProgress={this.saveVideoProgress}
+                            index = {selectedIndex}
+                        />
                         <VideoMeta {...videos[selectedIndex]} />
                     </div>
                     <div className="container-right">
