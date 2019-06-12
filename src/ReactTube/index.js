@@ -38,8 +38,9 @@ export default class ReactTube extends Component {
         this.setState({ videos: videos })
     }
     render() {
-        const videos = this.state.videos || []
-        const selectedIndex = this.state.selectedIndex
+        // const videos = this.state.videos || []
+        // const selectedIndex = this.state.selectedIndex
+        const { videos = [], selectedIndex } = this.state
         return (
             <section className="root-container">
                 <header>
@@ -50,7 +51,7 @@ export default class ReactTube extends Component {
                         <Player
                             video={videos[selectedIndex]}
                             onSaveVideoProgress={this.saveVideoProgress}
-                            index = {selectedIndex}
+                            index={selectedIndex}
                         />
                         <VideoMeta {...videos[selectedIndex]} />
                     </div>
