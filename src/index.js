@@ -5,6 +5,7 @@ import ProfileCard from './ProfileCard'
 import Clock from './Clock'
 import ReactTube from './ReactTube'
 import UnControlledForm from './Forms/UnControlledForm'
+import ControlledForm from './Forms/ControlledForm'
 import * as serviceWorker from './serviceWorker';
 import './app.css'
 //var sample = (<div><DefaultExport /><NamedExport /></div>)
@@ -37,7 +38,9 @@ var clock = (
 
 var reactTube = <ReactTube />
 var uncontrolledForm = <UnControlledForm />
-ReactDOM.render(uncontrolledForm, document.getElementById('root'));
+var controlledForm = <ControlledForm />
+
+ReactDOM.render(controlledForm, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

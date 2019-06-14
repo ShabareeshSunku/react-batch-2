@@ -7,7 +7,7 @@
     padding: 5px 20px 15px 20px;
     border: 1px solid lightgrey;
     border-radius: 3px;
-    width:50%;
+    width:80%;
     margin:auto;
     font-family: Arial;
     font-size: 17px;
@@ -71,7 +71,7 @@ input[type=text] {
     width: 100%;
     max-width: 100%; 
     box-sizing: border-box;
-    margin: 0;
+    margin: 16px 0px;
     border: 1px solid #aaa;
     box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
     border-radius: 3px;
