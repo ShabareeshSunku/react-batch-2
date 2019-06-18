@@ -1,45 +1,45 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 //import DefaultExport, { NamedExport } from './ImportExport'
-import ProfileCard from './ProfileCard'
-import Clock from './Clock'
-import ReactTube from './ReactTube'
-import UnControlledForm from './Forms/UnControlledForm'
-import ControlledForm from './Forms/ControlledForm'
+// import ProfileCard from './ProfileCard'
+// import Clock from './Clock'
+// import ReactTube from './ReactTube'
+// import UnControlledForm from './Forms/UnControlledForm'
+// import ControlledForm from './Forms/ControlledForm'
 import Contacts from './Contacts'
 import * as serviceWorker from './serviceWorker';
-import './app.css'
+//import './app.css'
 //var sample = (<div><DefaultExport /><NamedExport /></div>)
-var profileCards = (
-    <div>
-        <ProfileCard
-            name="Sanjib Sahu"
-            designation="Senior Software Engineer"
-            company="Oracle India"
-            src="https://randomuser.me/api/portraits/men/83.jpg"
-        />
-        <ProfileCard
-            name="Mathew Hoskins"
-            designation="Tech Lead"
-            company="Accenture India"
-            src="https://randomuser.me/api/portraits/men/18.jpg"
-        />
-        <ProfileCard
-            name="Ramesh Patro"
-            designation="Senior Manager"
-            company="CTS Limited"
-            src="https://randomuser.me/api/portraits/men/67.jpg"
-        />
-    </div>
-)
+// var profileCards = (
+//     <div>
+//         <ProfileCard
+//             name="Sanjib Sahu"
+//             designation="Senior Software Engineer"
+//             company="Oracle India"
+//             src="https://randomuser.me/api/portraits/men/83.jpg"
+//         />
+//         <ProfileCard
+//             name="Mathew Hoskins"
+//             designation="Tech Lead"
+//             company="Accenture India"
+//             src="https://randomuser.me/api/portraits/men/18.jpg"
+//         />
+//         <ProfileCard
+//             name="Ramesh Patro"
+//             designation="Senior Manager"
+//             company="CTS Limited"
+//             src="https://randomuser.me/api/portraits/men/67.jpg"
+//         />
+//     </div>
+// )
 
-var clock = (
-    <Clock name="Sanjib"/>
-)
+// var clock = (
+//     <Clock name="Sanjib"/>
+// )
 
-var reactTube = <ReactTube />
-var uncontrolledForm = <UnControlledForm />
-var controlledForm = <ControlledForm />
+// var reactTube = <ReactTube />
+// var uncontrolledForm = <UnControlledForm />
+// var controlledForm = <ControlledForm />
 var contacts = <Contacts />
 ReactDOM.render(contacts, document.getElementById('root'));
 
