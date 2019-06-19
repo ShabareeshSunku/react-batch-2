@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ContactList from './ContactList'
 import './contacts.css'
+import FavoritesContext from './FavoritesContext'
 export default class Contacts extends Component {
     constructor() {
         super()
@@ -97,18 +98,22 @@ export default class Contacts extends Component {
         const contacts = this.state.contacts
         const theme = this.state.theme
         const favorites = this.state.favorites
+        const contextObj = {
+            favorites: favorites,
+            addFavorite: this.addFavorite,
+            removeFavorite: this.removeFavorite
+        }
         return (
-            <div className={theme === 'light' ? 'lighttheme' : 'darktheme'}>
-                <div>
-                    <button onClick={this.changeTheme}>Update Theme</button>
+            <FavoritesContext.Provider value={contextObj}>
+                <div className={theme === 'light' ? 'lighttheme' : 'darktheme'}>
+                    <div>
+                        <button onClick={this.changeTheme}>Update Theme</button>
+                    </div>
+                    <ContactList
+                        contacts={contacts}
+                    />
                 </div>
-                <ContactList
-                    contacts={contacts}
-                    favorites={favorites}
-                    removeFavorite={this.removeFavorite}
-                    addFavorite={this.addFavorite}
-                />
-            </div>
+            </FavoritesContext.Provider>
         )
     }
 }
